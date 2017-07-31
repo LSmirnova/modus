@@ -1,0 +1,221 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title MODUCversus
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+
+        meta(name="description" content="")
+        link(rel="icon" href="assets/img/favicon.png")
+        link(rel="stylesheet" href="assets/lib/reset-and-normalize.min.css")
+        link(rel="stylesheet" href="assets/lib/font-awesome.min.css")
+        link(rel="stylesheet" href="assets/css/style.css")
+        //Не получилось создать условный комментарий в jade
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    body
+        - var menu = [{text: 'HOME', link: '#home'}, {text: 'ABOUT', link: '#about'}, {text: 'SERVICES', link: '#services'}, {text: 'PORTFOLIO', submenu: [{text: 'Portfolio 2 column page', link: '#item1'}, {text: 'Portfolio 2 column page', link: '#item2'}, {text: 'Portfolio 2 column page', link: '#item3'}] },  {text: 'BLOG', link: '#blog'}, {text: 'FEATURES', link: '#features'}, {text: 'CONTACTS', link: '#contacts'}];
+
+        - var homeSlider = [{header: 'VESTIBULUM', description: 'Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.', background: '#7f8c8c'}, {header: 'VESTIBULUM2', description: 'Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.',background: '#175656'}, {header: 'VESTIBULUM3', description: 'Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.', background: '#5a420e'}];
+
+        - var serviceItems = [{icon: 'fa fa-thumbs-o-up', title: 'SUSPENDISSE', description: 'Quisque id tellus quis risus vehicula vehicula ut turpis. In eros nulla, placerat vitae at, vehicula ut nunc.'}, {icon: 'fa fa-key', title: 'MAECENAS', description: 'Ut eleifend libero sed neque rhoncus consequat. Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.'}, {icon: 'fa fa-flag', title: 'ALIQUAM', description: 'Vivamus eget ante bibendum arcu vehicula ultricies. Integer venenatis mattis nisl, vitae pulvinar dui tempor non.'}, {icon: 'fa fa-flask', title: 'HABITASSE', description: 'Astehicula ultricies. Integer venenatis mattis nisl, vitae pulvinar dui tempor non. '}]
+
+        - var aboutSlide = [{id: "assets/img/about-1.jpg"},{id: "assets/img/about-2.jpg"},{id: "assets/img/about-3.jpg"},{id: "assets/img/about-4.jpg"},{id: "assets/img/about-5.jpg"}, {id: "assets/img/about-6.jpg"}, {id: "assets/img/about-7.jpg"}, {id: "assets/img/about-8.jpg"}, {id: "assets/img/about-9.jpg"}]
+
+        - var whyChoose = [{text: "Quisque at massa ipsum"}, {text: "Maecenas a lorem augue, egestas"}, {text: "Cras vitae felis at lacus eleifend"}, {text: "Etiam auctor diam pellentesque"}, {text: "Nulla ac massa at dolor"}, {text: "Condimentum eleifend vitae vitae"}]
+
+        - var skills = [{img: "assets/img/SUSPENDISSE .png", progress: "50", name: "SUSPENDISSE"}, {img: "assets/img/MAECENAS.png", progress: "70", name: "MAECENAS"}, {img: "assets/img/ALIQUAM .png", progress: "80", name: "ALIQUAM"}, {img: "assets/img/HABITASSE .png", progress: "100", name: "HABITASSE"}]
+
+        - var company = [{text: "About", link: '#about'}, {text: "FAQ", link: '#'}, {text: "Contact", link: '#'}, {text: "Terms", link: '#'}, {text: "Privacy", link: '#'}, {text: "Testimonials", link: '#'}]
+
+        - var communities = [{text: "Blog", link: '#'}, {text: "Forum", link: '#'}, {text: "Support", link: '#'}, {text: "Newsletter", link: '#'}]
+
+        header.ba-header
+            div.ba-container
+                div.ba-header__logo-menu
+                    div.ba-header__logo
+                        a(href="#")
+                            img(src="assets/img/logo.png")
+                    div.ba-header__menu
+                        div.ba-header__search
+                            img.ba-header__search-img(src='assets/img/search.png')
+                            input.ba-header__search-input(type="text")
+                        div(id="hamburger")
+                            span
+                            span
+                            span
+                            span
+
+                        nav
+                            ul.ba-header__nav
+                                each list in menu
+                                    if list.submenu
+                                        li.ba-header__item.ba-header__item-dropdown
+                                            a.ba-header__link-dropdown.ba-header__link=list.text
+                                            div.ba-dropmenu
+                                                div.ba-dropmenu__triangle
+                                                ul.ba-dropmenu__list
+                                                    each sublist in list.submenu
+                                                        li.ba-dropmenu__item
+                                                            a.ba-dropmenu__link(href="#{sublist.link}")= sublist.text
+                                    else
+                                        li.ba-header__item
+                                            a.ba-header__link(href="#{list.link}")= list.text
+
+    main
+        section.ba-home#home
+            each item in homeSlider
+                div.ba-home__item(style="background:#{item.background}")
+                    h1.ba-home__title=item.header
+                    p.ba-home__description=item.description
+        section.ba-service#services
+            div.ba-container
+                div.ba-service__title-container
+                    header.ba-service__title
+                        h2 Some of our top services
+                        p Ut eleifend libero sed neque rhoncus consequat. Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.
+                    a.ba-btn.ba-service__btn(href="#") VIEW MORE
+                div.ba-service__items
+                    each service in serviceItems
+                        div.ba-service__item-container
+                            i.ba-service__item-icon(class="#{service.icon}" aria-hidden="true")
+                            h3.ba-service__item-title=service.title
+                            p.ba-service__item-description=service.description
+                            a.ba-service__item-button(href='#') read more
+        section.ba-about#about
+            div.ba-about__background
+            div.ba-container
+                header.ba-about__title
+                    h2 WHY MODUS VERSUS?
+                    p Capacitance cascading integer reflective interface data development high bus cache dithering transponder.
+                div.ba-about__slider
+                    each slide in aboutSlide
+                        div.ba-about__slider-item
+                            div.ba-about__slider-header
+                                div.ba-about__slider-circles
+                                    div.ba-about__slider-circle
+                                    div.ba-about__slider-circle
+                                    div.ba-about__slider-circle
+                                div.ba-about__slider-minimize
+                            div.ba-about__slider-img(style='background-image: url(#{slide.id})')
+                div.ba-about__description
+                    div.ba-about__who-choose
+                        h3.ba-about__who-choose-title Why Choose Us ?
+                        ul.ba-about__who-choose-list
+                            each  paragraph in whyChoose
+                                li.ba-about__who-choose-item= paragraph.text
+                    div.ba-about__skills
+                        p.ba-about__skills-description
+                            | Curabitur quis nisl in leo euismod venenatis eu in diam. Etiam auctor diam pellentesque lectus
+                            a(href='#') vehicula mattis
+                            | . Nulla ac massa at dolor condimentum eleifend vitae vitae urna.
+                        ul.ba-about__skills-container
+                            each skill in skills
+                                li.ba-about__skill
+                                    img(src="#{skill.img}")
+                                    p=skill.progress
+                                    h4=skill.name
+                    div.ba-about__testemoials
+                        h3 What Client’s Say ?
+                        q
+                            | Curabitur quis nisl in leo euismod venenatis eu in diam. Etiam auctor diam pellentesque lectus vehicula mattis.
+                            span Nulla ac massa at dolor condimentum
+                        div.ba-about__testemoials-triangle
+                        adress.ba-about__testemoials-name Jhon Doe
+        section.ba-clients
+            div.ba-container
+                header.ba-clients__header
+                    h2 Our Happy Clients
+                    div.ba-clients__decoration
+                        div.ba-clients__decoration-circle
+                        div.ba-clients__decoration-line
+                    div.ba-clients__slider-navigation
+                        a.ba-clients__slider-btn.ba-clients__slider-btn-prev(href="#")
+                        a.ba-clients__slider-btn.ba-clients__slider-btn-next(href="#")
+                div.ba-clients__slider
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+                    img(src="assets/img/clients.png")
+    footer
+        section.ba-footer__section-first.ba-footer__section
+            div.ba-container
+                div.ba-footer-first__container
+                    div.ba-footer-first__items.ba-footer-first__about
+                        img(src="assets/img/logo.png")
+                        p.ba-footer-first__info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec .
+                        p.ba-footer-first__phone Phone:
+                            span 182 2569 5896
+                        p.ba-footer-first__mail e-mail:
+                            span info@modu.versus
+                    div.ba-footer-first__items.ba-footer-first__links
+                        h3 Company
+                        ul
+                            each point in company
+                                li.ba-footer-first__item
+                                    a.ba-footer-first__link(href="#{point.link}")=point.text
+                    div.ba-footer-first__items.ba-footer-first__links
+                        h3 Community
+                        ul
+                            each community in communities
+                                li.ba-footer-first__item
+                                    a.ba-footer-first__link(href="#{community.link}")=community.text
+                    div.ba-footer-first__items.ba-footer-first__blog
+                        h3 from the
+                            span  BLOG
+                        div.ba-footer-first__blog-message
+                            div.ba-footer-first__blog-img
+                                i(class="fa fa-picture-o" aria-hidden="true")
+                            div.ba-footer-first__blog-info
+                                p.ba-footer-first__blog-description Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p.ba-footer-first__blog-data 26 May, 2013
+                        div.ba-footer-first__blog-message
+                            div.ba-footer-first__blog-img
+                                i(class="fa fa-picture-o" aria-hidden="true")
+                            div.ba-footer-first__blog-info
+                                p.ba-footer-first__blog-description Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                p.ba-footer-first__blog-data 26 May, 2013
+
+
+        section.ba-footer__section-second.ba-footer__section
+            div.ba-container
+                div.ba-footer-second__container
+                    p.ba-footer-second__copyright 2013  ModusVersus
+
+                    div.ba-footer-second__social-links
+                        a(href='#')
+                            img(src="assets/img/facebook.png")
+                        a(href='#')
+                            img(src="assets/img/g-plus.png")
+
+                        a(href='#')
+                            img(src="assets/img/twetter.png")
+
+
+                        a(href='#')
+                            img(src="assets/img/rss.png")
+
+
+
+
+
+
+
+
+        script(src='assets/script/input.js' defer)
+        script(src='assets/script/menu.js' defer)
+        script(src="assets/lib/jquery.min.js" defer)
+        script(src="assets/lib/slick.min.js" defer)
+        script(src="assets/script/smoothscroll.js" defer)
+        script(src="assets/script/home-slider.js" defer)
+        script(src="assets/script/about-slider.js" defer)
+        script(src="assets/script/clients-slider.js" defer)

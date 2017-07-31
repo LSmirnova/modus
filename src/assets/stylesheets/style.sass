@@ -1,0 +1,86 @@
+
+*, *:after, *:before
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.ba-container,.ba-container-center
+  margin-left: auto
+  margin-right: auto
+
+
+img
+  max-width: 100%
+  height: auto
+
+
+html
+  height: 100%
+
+body, html
+  min-height: 100%
+
+p
+  margin: 0
+
+
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button
+  -webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in
+  -moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in
+  transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in
+
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button
+  display: inline-block
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select
+
+  -webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in
+  -moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in
+  transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in
+
+
+
+
+@import "fonts"
+@import "../lib/slick"
+@import "variables"
+@import "header"
+@import "hamburger"
+@import "home"
+@import "service"
+@import "about"
+@import "clients"
+@import "footer"
+@import "media"
+
+
+body
+  background-color: $background-color
+  font-family: $primary-font
+  color: $font-color--light
+  font-size: 13px
+  text-align: center
+
+
+
+.ba-container
+  max-width: 1190px
+  padding: 0 10px
+
+.slick-slide
+  outline: none

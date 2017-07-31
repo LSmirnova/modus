@@ -1,0 +1,200 @@
+.ba-about
+  position: relative
+  color: $font-color--dark
+
+  &__background
+    position: absolute
+    height: 400px
+    width: 100%
+    background-color: $background-color-darker
+    z-index: -1
+  &__title
+    h2
+      color: #e1524b
+      font-size: 40px
+      font-weight: 600
+      text-transform: uppercase
+      padding: 68px 0 5px
+
+  &__slider
+    padding: 27px 0 0
+
+    &-item
+      width: 370px
+      height: 260px
+      background-color: #c1c7c8
+      border-radius: 8px
+
+    &-header
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height: 42px
+      padding: 0 15px
+
+    &-circles
+      display: flex
+
+    &-circle
+      background-color: $background-color-darker
+      width: 12px
+      height: 12px
+      border-radius: 50%
+      margin-right: 8px
+
+    &-minimize
+      background-color: $background-color-darker
+      width: 12px
+      height: 6px
+      border-radius: 4px
+
+    &-img
+      margin: 0 5px 5px
+      border-radius: 5px
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      height: 213px
+
+  .slick-slide
+    transition: ease-in-out all .15s
+    position: relative
+    overflow: visible
+
+
+  .slick-track
+    padding: 100px 0
+
+  .slick-current
+    transform: scale(1.54, 1.385)
+    transition: ease-in-out all .15s
+    z-index: 2
+
+  .slick-current .ba-about__slider-header
+    transform: scale(0.65, 0.722)
+    width: 150%
+    margin-left: -25%
+
+
+  .slick-current:hover
+    cursor: pointer
+
+
+.ba-about
+  &__description
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    text-align: left
+    color: $font-color--dark
+    margin-left: -10px
+    margin-right: -10px
+
+  &__who-choose
+    max-width: 245px
+    margin: 0 10px 10px
+
+
+    &-title
+      color: #7f8c8c
+      font-size: 16px
+      font-weight: 700
+      margin-bottom: 37px
+
+    &-list
+      padding-left: 0
+      list-style: none
+
+    &-item
+      line-height: 26px
+
+      &:before
+        content: url("../img/list-item.png")
+        margin-right: 6px
+
+  &__skills
+    max-width: 570px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin: 0 10px 10px
+
+    &-description
+      line-height: 25px
+
+      a
+        color: #e1524b
+
+    &-container
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      margin-left: -10px
+      margin-right: -10px
+
+  &__skill
+    flex-shrink: 0
+    position: relative
+    color: #7f8c8c
+    font-weight: 700
+    margin: 10px
+
+    p
+      position: absolute
+      color: #7f8c8c
+      font-size: 30px
+      left: 50%
+      transform: translate(-50%, -100%)
+
+    h4
+      margin-top: 24px
+      font-size: 16px
+      font-weight: 700
+      line-height: 19px
+      text-transform: uppercase
+      text-align: center
+
+  &__testemoials
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    max-width: 270px
+    margin: 0 10px 10px
+
+    h3
+      color: #7f8c8c
+      font-size: 16px
+      font-weight: 700
+      margin-bottom: 23px
+    q
+      width: 270px
+      padding: 16px 20px 20px 16px
+      background-color: #f8f8f8
+      border-radius: 5px
+      color: $font-color--dark
+      font-style: italic
+      line-height: 24.7px
+
+      span
+        font-style: normal
+
+    &-triangle
+      position: relative
+      left: 20px
+      border: 12px solid transparent
+      border-right: 12px solid #f8f8f8
+      border-top: 12px solid #f8f8f8
+      width: 0
+      height: 0
+
+    &-name
+      color: $font-color--dark
+      font-size: 16px
+      font-weight: 600
+      margin-left: 60px
+      transform: translateY(-100%)
+
+
+
+

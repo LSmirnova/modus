@@ -1,0 +1,155 @@
+.ba-header
+  width: 100%
+  background-color: $color-green
+  position: relative
+  z-index: 2
+
+  &__logo
+    flex-shrink: 0
+
+
+  &__logo-menu
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 7px
+
+  &__nav
+    display: flex
+    justify-content: flex-end
+    padding-left: 0
+    list-style: none
+
+
+  &__item
+    display: flex
+    align-items: center
+    margin-left: 9px
+    margin-right: 9px
+    min-height: 80px
+
+
+
+  &__link
+    height: 33px
+    padding: 10px 15px
+    border-radius: 5px
+    color: $font-color--light
+    font-weight: 600
+    text-transform: uppercase
+    text-decoration: none
+
+    &--active
+      background-color: $color-green--dark
+      border-bottom: 3px solid #528b86
+      font-size: 14px
+
+    &:hover
+      background-color: $color-red--light
+      border-bottom: 3px solid $color-red
+
+    &-dropdown
+      position: relative
+
+      &:before
+        content: url('../img/arrow-down.png')
+        margin-right: 8px
+        position: relative
+        bottom: 10px
+        visibility: hidden
+
+
+  &__search
+    order: 2
+    min-height: 80px
+    vertical-align: middle
+    line-height: 80px
+    margin-left: 26px
+    position: relative
+    flex-shrink: 0
+
+    &-img
+      position: relative
+      top: 4px
+
+    &-input
+      position: absolute
+      right: 0
+      transform: translateY(-100%)
+      color: $font-color--dark
+
+
+.ba-dropmenu
+  display: none
+  position: absolute
+  background-color: $color-red
+  border-radius: 5px
+  padding: 5px 5px 0
+  width: 200px
+  top: 70px
+
+  &__triangle
+    position: absolute
+    transform: translateY(-100%)
+    border: 14px solid transparent
+    border-bottom: 12px solid $color-red
+    width: 0
+    height: 0
+    z-index: 0
+
+  &__list
+    position: relative
+    z-index: 2
+
+  &__item
+    width: 100%
+    border-radius: 2px 3px 3px 2px
+    background-color: rgba(255, 255, 255, 0.1)
+    margin-bottom: 5px
+    padding: 10px
+    display: flex
+    align-items: center
+
+    &:hover
+      background-color: $color-green
+
+  &__link
+    color: $font-color--light
+    font-weight: 600
+
+
+    &:before
+      content: url('../img/arrow-right.png')
+      margin-right: 9px
+
+
+
+.ba-header__item-dropdown:hover > .ba-dropmenu
+  display: block
+
+.ba-header__item-dropdown:hover > .ba-header__link-dropdown
+  background-color: $color-red--light
+  border-bottom: 3px solid $color-red
+
+.ba-header__item-dropdown:hover > .ba-header__link-dropdown:before
+    visibility: visible
+    bottom: 2.5px
+    transition: all 1s
+
+
+.ba-header__search > input
+  display: none
+
+.ba-header__search--active > input
+  display: block
+
+#hamburger,
+.ba-header__search-img,
+.ba-header__item,
+.ba-dropmenu__item
+  cursor: pointer
+
+
+
+

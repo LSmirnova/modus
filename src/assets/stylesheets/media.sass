@@ -1,0 +1,107 @@
+//header begin
+
+@media (min-width: 985px)
+  .ba-header__menu
+    display: flex
+
+    #hamburger
+      display: none
+
+@media (max-width: 985px)
+  .ba-header__menu
+    display: block
+
+  #hamburger
+    display: inline-block
+
+  .ba-header__search
+    display: inline-block
+
+    &-img
+      top: 0
+      padding-right: 10px
+
+  .ba-header__nav
+    display: none
+    position: absolute
+    background-color: $color-green
+    border-top: 1px solid $color-green--dark
+    padding-top: 15px
+    right: 0
+
+    .ba-header__item
+      text-align: right
+      display: block
+      min-height: 42px
+
+  .ba-header__menu.ba-header__menu--open
+    .ba-header__nav
+      display: block
+
+  .ba-dropmenu
+    right: 100%
+    top: 95px
+    text-align: left
+
+    &__triangle
+      border: 14px solid transparent
+      border-left: 12px solid $color-red
+      top: 59%
+      left: 100%
+      z-index: 0
+
+@media (max-width: 360px)
+  .ba-dropmenu
+    width: 150px
+    top: 73px
+
+// header end
+
+//home begin
+
+@media (max-width: 640px)
+  .slick-prev,
+  .slick-next
+    visibility: hidden
+
+  .ba-home__title
+    font-size: 2rem
+
+//about slider begin
+
+@media (max-width: 780px)
+  .ba-about
+    .slick-current
+      transform: scale(1, 1)
+
+    .slick-current .ba-about__slider-header
+      transform: scale(1, 1)
+      width: 100%
+      margin-left: 0
+//about slider end
+
+//about description
+
+@media (max-width: 1081px)
+  .ba-about__skills
+    order: 1
+
+  .ba-about__description
+    justify-content: center
+
+//about description end
+
+//footer begin
+@media (max-width: 714px)
+  .ba-footer-first__container
+    justify-content: center
+
+  .ba-footer-first__about
+    max-width: 100%
+    text-align: center
+
+@media (max-width: 350px)
+  .ba-footer-second__container
+    justify-content: center
+
+//footer end

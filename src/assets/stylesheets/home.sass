@@ -1,0 +1,147 @@
+.ba-home
+  width: 100%
+  position: relative
+  z-index: 0
+  color: $font-color--light
+
+
+  &__item
+    padding: 0 10px
+
+
+  &__title
+    border-radius: 5px
+    background-color: $color-red
+    font-size: 3.125rem
+    vertical-align: middle
+    padding: 0 10px
+    font-weight: 700
+    text-transform: uppercase
+    margin: 0 auto 10px
+    position: relative
+    top: -25px
+
+
+
+  &__description
+    max-width: 470px
+    min-height: 71px
+    border-radius: 5px
+    background-color: rgba(0, 0, 0, 0.5)
+    margin: 0 auto
+    padding: 5px 38px 0
+    line-height: 26px
+    position: relative
+    top: -20px
+
+
+
+
+
+
+  &.slick-initialized .slick-slide
+    display: flex
+    flex-direction: column
+    justify-content: center
+    min-height: 500px
+
+
+  .slick-dotted.slick-slider
+
+    margin-bottom: 0
+
+
+  .slick-dots
+
+    position: absolute
+    bottom: -26px
+    display: block
+    width: 100%
+    padding: 0
+    margin: 0
+    list-style: none
+    text-align: center
+
+  .slick-dots li
+
+    position: relative
+    display: inline-block
+    width: 60px
+    height: 5px
+    margin: 0 5px
+    padding: 0
+    cursor: pointer
+
+  .slick-dots li button
+    padding: 0
+    font-size: 0
+    line-height: 0
+    display: block
+    width: 60px
+    height: 5px
+    cursor: pointer
+    color: transparent
+    border: none
+    outline: none
+    background: #b0b8b9
+
+  .slick-dots li button:hover,
+  .slick-dots li button:focus
+
+    background-color: $color-red
+    outline: none
+
+
+  .slick-dots li.slick-active button
+
+    background-color: $color-red
+
+
+
+  .slick-prev,
+  .slick-next
+    position: absolute
+    height: 60px
+    width: 50px
+
+    cursor: pointer
+    background-color: $color-red--light
+    background-repeat: no-repeat
+    background-position: center
+    color: transparent
+    transform: translateY(-50%)
+    top: 50%
+    padding: 0
+    border: none
+    border-bottom: 3px solid $color-red
+    outline: none
+    &:hover
+      outline: none
+
+
+
+
+  .slick-prev
+    background-image: url("../img/two-arrow-left.png")
+    z-index: 3
+    left: 0
+    border-radius: 0 5px 5px 0
+
+  .slick-next
+    background-image: url("../img/two-arrow-right.png")
+    right: 0
+    border-radius: 5px 0 0 5px
+
+  .slick-prev:hover
+    background: $color-red url("../img/two-arrow-left.png") 50% no-repeat
+    z-index: 3
+
+
+  .slick-next:hover
+    background: $color-red url("../img/two-arrow-right.png") 50% no-repeat
+
+
+
+
+
+
